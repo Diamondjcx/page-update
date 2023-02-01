@@ -1,6 +1,5 @@
 import { h, ref } from "vue";
-import { checkVersion } from "check-version";
-import { Updater } from "../uitls/updater";
+import { Updater } from "./updater";
 
 const visible = ref(false);
 const _url = ref("");
@@ -22,6 +21,9 @@ const _url = ref("");
 const up = new Updater({
   timer: 2000,
 });
+
+// todo 回调出三个方法亦可
+
 //未更新通知
 up.on("no-update", () => {
   console.log("未更新");
@@ -31,8 +33,5 @@ up.on("update", () => {
   console.log("更新了");
 });
 const handleRefresh = () => {
-  // 触发版本更新
-  __bl.sum("event-versionUpdate");
-
   window.location.replace(_url.value);
 };

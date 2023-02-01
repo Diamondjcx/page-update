@@ -1,7 +1,11 @@
-// interface Options {
-//     timer?: number
-// }
-
+/** todo
+ * 1. 属性和方法
+ * auto_refresh 是否自动刷新
+ * success fn
+ * fail fn
+ * error  fn
+ * 2. 修改为setTimeout
+ */
 export class Updater {
   oldScript = []; //存储第一次值也就是script 的hash 信息
   newScript = []; //获取新的值 也就是新的script 的hash信息
